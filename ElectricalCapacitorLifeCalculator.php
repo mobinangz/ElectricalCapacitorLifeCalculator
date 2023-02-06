@@ -1,9 +1,10 @@
 <?php
-$L1=10000;
-$VR=2;
-$V0=100;
-$Tm=16;
-$TA=23;
+$L1=readline('Enter L1' . "\n");
+echo "\n";
+$VR=readline('Enter VR' . "\n");
+$V0=readline('Enter V0' . "\n");
+$Tm=readline('Enter Tm' . "\n");
+$TA=readline('Enter TA' . "\n");
 //$DealtaT=($TA-$Tm);
 $x=($Tm-($TA))/10;
 
