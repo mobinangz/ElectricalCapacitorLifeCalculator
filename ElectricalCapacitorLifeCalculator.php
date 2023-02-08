@@ -1,14 +1,25 @@
 <?php
-$L1=readline('Enter L1' . "\n");
-echo "\n";
-$VR=readline('Enter VR' . "\n");
-$V0=readline('Enter V0' . "\n");
-$Tm=readline('Enter Tm' . "\n");
-$TA=readline('Enter TA' . "\n");
+$L1=readline('Enter L1  ');
+$Vr=readline('Enter Vr  ');
+if($Vr<=2){$Vr=$Vr;}
+else if($Vr>2){
+	while($Vr>2) {
+	echo("Vr should be less or equal to 2 " . "\n");
+	$Vr=readline('Enter Vr  ');
+}}
+$Vo=readline('Enter Vo  ');
+$Tm=readline('Enter Tm  ');
+$TA=readline('Enter TA  ');
 //$DealtaT=($TA-$Tm);
 $x=($Tm-($TA))/10;
-
-$sum=$L1*($VR/$V0)*2**$x;
+$sum=$L1*($Vr/$Vo)*2**$x;
 echo $sum;
+echo "\n";
+
+
+
+
+
+
 
 
