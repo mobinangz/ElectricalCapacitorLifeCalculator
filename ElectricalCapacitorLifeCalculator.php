@@ -14,7 +14,7 @@ $TA=readline('Enter TA  ');
 $x=($Tm-($TA))/10;
 $sum=$L1*($Vr/$Vo)*2**$x;
 echo $sum;
-echo "\n";
+
 
 
 
