@@ -1,25 +1,34 @@
 <?php
-$L1=readline('Enter L1  ');
-$Vr=readline('Enter Vr  ');
-if($Vr<=2){$Vr=$Vr;}
-else if($Vr>2){
-	while($Vr>2) {
-	echo("Vr should be less or equal to 2 " . "\n");
-	$Vr=readline('Enter Vr  ');
-}}
-$Vo=readline('Enter Vo  ');
-$Tm=readline('Enter Tm  ');
-$TA=readline('Enter TA  ');
-//$DealtaT=($TA-$Tm);
-$x=($Tm-($TA))/10;
-$sum=$L1*($Vr/$Vo)*2**$x;
-echo $sum;
-echo "\n";
 
+// give L1 - Load Life Rating
+$loadLifeRating = readline('Enter Load Life Rating:  ');
+// Vr - Maximum voltage rating of capacitor
+$maximumVoltageRatingCapacitor = readline('Enter Maximum voltage rating of capacitor:  ');
 
+if ($maximumVoltageRatingCapacitor > 2) {
+	while( $maximumVoltageRatingCapacitor > 2) {
+		echo "|------------------------------------------------------------------------| \n";
+		echo("|   Maximum voltage rating of capacitor should be less or equal to 2     |" . "\n");
+		echo "|------------------------------------------------------------------------| \n";
+		$maximumVoltageRatingCapacitor = readline('Enter Maximum voltage rating of capacitor:  ');
+	}
+}
+// Vo - Operating voltage of application
+$operatingVoltageApplication = readline('Enter Operating voltage of application:  ');
 
+// Tm - Maximum temp rating of capacitor
+$maximumTempratingCapacitor = readline('Enter Maximum temp rating of capacitor:  ');
+// TA - Ambient Temperature
+$ambientTemperature =readline('Enter Ambient Temperature:  ');
 
+// @TODO check later
+//$DealtaT = ($ambientTemperature - $maximumTempratingCapacitor);
 
+$x = ($maximumTempratingCapacitor - $ambientTemperature) / 10;
 
+$sum = $loadLifeRating * ($maximumVoltageRatingCapacitor / $operatingVoltageApplication ) * (2**$x);
+echo "---------------------------------------";
+echo sprintf("Projected Life at Operating Conditions (L2) Is: %d \n", $sum);
+echo "---------------------------------------";
 
 
